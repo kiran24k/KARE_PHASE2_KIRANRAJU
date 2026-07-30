@@ -1,0 +1,59 @@
+class Main{
+    pulic static void main(String args[]) {
+        System.out.print("HELLO WORLD");
+    }
+}
+
+
+//i/p -> CSE "KARE" Students
+//o/p -> CSE "KARE" Students
+
+class Details
+{
+    public static void main(String args[]){
+        System.out.print("CSE \"KARE\" Students");
+    }
+}
+
+
+// i/p -> \n
+// o/p -> \n 
+class Main{
+    public static void main(String args[]){
+        System.out.print("\\n");
+    }
+}
+
+//i/p -> 20 10
+//o/p -> 20 10
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner kk = new Scanner(System.in);
+        int a = kk.nextInt();
+        System.out.println(a);
+    }
+}
+
+
+//write a java program to get a float input from user and print it with two decimal points
+import java.util.*;
+class Main {
+    public static void main(String args[]){
+        Scanner kk = new Scanner(System.in);
+        float f = kk.nextFloat();
+        System.out.printf("%.2f",f);
+    }
+}
+
+//write a java program to get a double input from user and print it
+import java.util.*;
+class Main {
+    public static void main(String args[]){
+        Scanner kk = new Scanner(System.in);
+        double d = kk.nextFloat();
+        System.out.print(d);
+    }
+}
+
+
