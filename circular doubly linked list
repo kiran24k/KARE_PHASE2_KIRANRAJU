@@ -251,3 +251,103 @@ public class Main {
     }
 }
 
+//Maximum elements
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+    Node prev;
+
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+public class Main {
+
+    Node first = null;
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int d = sc.nextInt();
+
+        Main m = new Main();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.display();
+
+        System.out.println("\nMaximum = " + m.maximum());
+    }
+
+    void insert(int d) {
+
+        Node n = new Node(d);
+
+        if (first == null) {
+
+            first = n;
+
+            n.next = first;
+            n.prev = first;
+
+        } 
+        else {
+
+            Node temp = first;
+
+            while (temp.next != first) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.prev = temp;
+
+            n.next = first;
+            first.prev = n;
+        }
+    }
+
+    void display() {
+
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node temp = first;
+
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+
+    int maximum() {
+
+        if (first == null)
+            return 0;
+
+        int max = first.data;
+        Node temp = first.next;
+
+        while (temp != first) {
+
+            if (temp.data > max) {
+                max = temp.data;
+            }
+
+            temp = temp.next;
+        }
+
+        return max;
+    }
+} 
