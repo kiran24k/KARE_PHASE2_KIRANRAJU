@@ -126,3 +126,107 @@ public class Main {
         return sum;
     }
 }
+
+//sort elements
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+    }
+}
+
+public class Main {
+
+    Node first = null;
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int d = sc.nextInt();
+
+        Main m = new Main();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        System.out.println("Before sorting:");
+        m.display();
+
+        m.sort();
+
+        System.out.println("\nAfter sorting:");
+        m.display();
+    }
+
+    void insert(int d) {
+
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+            n.next = first;
+        } 
+        else {
+            Node temp = first;
+
+            while (temp.next != first) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.next = first;
+        }
+    }
+
+    void display() {
+
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node temp = first;
+
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+
+    void sort() {
+
+        if (first == null)
+            return;
+
+        Node i = first;
+
+        do {
+
+            Node j = i.next;
+
+            while (j != first) {
+
+                if (i.data > j.data) {
+
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+
+                j = j.next;
+            }
+
+            i = i.next;
+
+        } while (i.next != first);
+    }
+}
+
