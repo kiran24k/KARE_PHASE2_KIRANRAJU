@@ -1,73 +1,415 @@
+1. Queue with array
+
 import java.util.*;
+
 class Queue {
     int front, rear;
     int n;
     int queue[];
-    Queue(int n){
+
+    Queue(int n) {
         this.n = n;
         queue = new int[n];
         front = 0;
         rear = -1;
     }
+
     void enqueue(int data) {
-        if(rear == n -1) {
+        if (rear == n - 1) {
             System.out.println("Queue is full");
             return;
         }
+
         rear++;
         queue[rear] = data;
     }
-    int dequeue(){
-        if(front > rear) {
+
+    int dequeue() {
+        if (front > rear) {
             System.out.println("Queue is empty");
-            return 0;
+            return -1;
         }
+
         return queue[front++];
     }
+
     void display() {
-        if(front > rear) {
+        if (front > rear) {
             System.out.println("Queue is empty");
             return;
         }
-        for(int i = front;i <= rear;i++){
+
+        for (int i = front; i <= rear; i++) {
             System.out.print(queue[i] + " ");
         }
+
         System.out.println();
     }
 }
-class Main{
-    public static void main(String args[]){
+
+class Main {
+    public static void main(String args[]) {
+
         Scanner sc = new Scanner(System.in);
+
         int n = sc.nextInt();
         Queue q = new Queue(n);
-        while(true){
+
+        while (true) {
+
             System.out.println("\n1. Enqueue");
             System.out.println("2. Dequeue");
-            System.out.println("3.      ");
+            System.out.println("3. Display");
             System.out.println("4. Exit");
+
             int choice = sc.nextInt();
-            switch (choice) 
-            {
-                case 1: 
+
+            switch (choice) {
+
+                case 1:
                     System.out.print("Enter value to enqueue: ");
                     int val = sc.nextInt();
                     q.enqueue(val);
                     break;
+
                 case 2:
                     int removed = q.dequeue();
-                    if(removed != -1){
-                        System.out.println(removed);
+
+                    if (removed != -1) {
+                        System.out.println("Deleted: " + removed);
                     }
                     break;
+
                 case 3:
                     q.display();
                     break;
+
                 case 4:
                     System.out.print("Exiting");
                     return;
+
                 default:
                     System.out.println("Invalid choice");
-                    
+            }
+        }
+    }
+}
+
+
+2.Queue with Linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Queue {
+    Node front, rear;
+
+    Queue() {
+        front = null;
+        rear = null;
+    }
+
+    void enqueue(int data) {
+
+        Node newNode = new Node(data);
+
+        if (rear == null) {
+            front = rear = newNode;
+            return;
+        }
+
+        rear.next = newNode;
+        rear = newNode;
+    }
+
+    int dequeue() {
+
+        if (front == null) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+
+        int data = front.data;
+
+        front = front.next;
+
+        if (front == null) {
+            rear = null;
+        }
+
+        return data;
+    }
+
+    void display() {
+
+        if (front == null) {
+            System.out.println("Queue is empty");
+            return;
+        }
+
+        Node temp = front;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+
+        System.out.println();
+    }
+}
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Queue q = new Queue();
+
+        while (true) {
+
+            System.out.println("\n1. Enqueue");
+            System.out.println("2. Dequeue");
+            System.out.println("3. Display");
+            System.out.println("4. Exit");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    System.out.print("Enter value to enqueue: ");
+                    int val = sc.nextInt();
+                    q.enqueue(val);
+                    break;
+
+                case 2:
+                    int removed = q.dequeue();
+
+                    if (removed != -1) {
+                        System.out.println("Deleted: " + removed);
+                    }
+                    break;
+
+                case 3:
+                    q.display();
+                    break;
+
+                case 4:
+                    System.out.print("Exiting");
+                    return;
+
+                default:
+                    System.out.println("Invalid choice");
+            }
+        }
+    }
+}
+
+3.Stack with Array
+import java.util.*;
+
+class Stack {
+    int top;
+    int n;
+    int stack[];
+
+    Stack(int n) {
+        this.n = n;
+        stack = new int[n];
+        top = -1;
+    }
+
+    void push(int data) {
+        if (top == n - 1) {
+            System.out.println("Stack is full");
+            return;
+        }
+
+        top++;
+        stack[top] = data;
+    }
+
+    int pop() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+
+        return stack[top--];
+    }
+
+    void display() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+            return;
+        }
+
+        for (int i = top; i >= 0; i--) {
+            System.out.print(stack[i] + " ");
+        }
+
+        System.out.println();
+    }
+}
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        Stack s = new Stack(n);
+
+        while (true) {
+
+            System.out.println("\n1. Push");
+            System.out.println("2. Pop");
+            System.out.println("3. Display");
+            System.out.println("4. Exit");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    System.out.print("Enter value to push: ");
+                    int val = sc.nextInt();
+                    s.push(val);
+                    break;
+
+                case 2:
+                    int removed = s.pop();
+
+                    if (removed != -1) {
+                        System.out.println("Deleted: " + removed);
+                    }
+                    break;
+
+                case 3:
+                    s.display();
+                    break;
+
+                case 4:
+                    System.out.print("Exiting");
+                    return;
+
+                default:
+                    System.out.println("Invalid choice");
+            }
+        }
+    }
+}
+
+4.Stack with Linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Stack {
+    Node top;
+
+    Stack() {
+        top = null;
+    }
+
+    void push(int data) {
+
+        Node newNode = new Node(data);
+
+        newNode.next = top;
+        top = newNode;
+    }
+
+    int pop() {
+
+        if (top == null) {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+
+        int data = top.data;
+
+        top = top.next;
+
+        return data;
+    }
+
+    void display() {
+
+        if (top == null) {
+            System.out.println("Stack is empty");
+            return;
+        }
+
+        Node temp = top;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+
+        System.out.println();
+    }
+}
+
+class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Stack s = new Stack();
+
+        while (true) {
+
+            System.out.println("\n1. Push");
+            System.out.println("2. Pop");
+            System.out.println("3. Display");
+            System.out.println("4. Exit");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    System.out.print("Enter value to push: ");
+                    int val = sc.nextInt();
+                    s.push(val);
+                    break;
+
+                case 2:
+                    int removed = s.pop();
+
+                    if (removed != -1) {
+                        System.out.println("Deleted: " + removed);
+                    }
+                    break;
+
+                case 3:
+                    s.display();
+                    break;
+
+                case 4:
+                    System.out.print("Exiting");
+                    return;
+
+                default:
+                    System.out.println("Invalid choice");
             }
         }
     }
