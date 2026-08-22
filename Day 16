@@ -321,3 +321,294 @@ public class Main {
     }
 }
 
+
+class Main {
+
+    static class Node {
+        int data;
+        Node prev;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    static int sum() {
+        int total = 0;
+        Node temp = head;
+
+        while (temp != null) {
+            total += temp.data;
+            temp = temp.next;
+        }
+
+        return total;
+    }
+
+    public static void main(String[] args) {
+
+        insert(10);
+        insert(20);
+        insert(30);
+        insert(40);
+
+        System.out.println("Sum = " + sum());
+    }
+}
+
+
+
+
+
+class Main {
+
+    static class Node {
+        int data;
+        Node prev;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    static int maximum() {
+        int max = head.data;
+        Node temp = head;
+
+        while (temp != null) {
+            if (temp.data > max) {
+                max = temp.data;
+            }
+            temp = temp.next;
+        }
+
+        return max;
+    }
+
+    public static void main(String[] args) {
+
+        insert(10);
+        insert(50);
+        insert(20);
+        insert(80);
+        insert(30);
+
+        System.out.println("Maximum = " + maximum());
+    }
+}
+
+
+
+
+
+
+class Main {
+
+    static class Node {
+        int data;
+        Node prev;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+
+
+
+
+class Main {
+
+    static class Node {
+        int data;
+        Node prev;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    static void sort() {
+        Node i = head;
+
+        while (i != null) {
+            Node j = i.next;
+
+            while (j != null) {
+                if (i.data > j.data) {
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+
+                j = j.next;
+            }
+
+            i = i.next;
+        }
+    }
+
+    static void display() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        insert(40);
+        insert(10);
+        insert(50);
+        insert(20);
+        insert(30);
+
+        System.out.println("Before sorting:");
+        display();
+
+        sort();
+
+        System.out.println("\nAfter sorting:");
+        display();
+    }
+}
+
+
+
+
+
+class Main {
+
+    static class Node {
+        int data;
+        Node prev;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    static void display() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        insert(10);
+        insert(20);
+        insert(30);
+        insert(40);
+
+        System.out.println("Doubly Linked List:");
+        display();
+    }
+}
+
