@@ -1,0 +1,14 @@
+import java.util.*;
+class Main {
+    public static void main(String args[]){
+        ArrayList obj = new ArrayList();
+        obj.add(10);
+        obj.add(20);
+        obj.add(30);
+        obj.add(2.5);
+        obj.add('c');
+        obj.add("abc");
+        System.out.print(obj);
+    }
+}
+
