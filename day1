@@ -1,0 +1,118 @@
+class Main{
+    pulic static void main(String args[]) {
+        System.out.print("HELLO WORLD");
+    }
+}
+
+
+//i/p -> CSE "KARE" Students
+//o/p -> CSE "KARE" Students
+
+class Details
+{
+    public static void main(String args[]){
+        System.out.print("CSE \"KARE\" Students");
+    }
+}
+
+
+// i/p -> \n
+// o/p -> \n 
+class Main{
+    public static void main(String args[]){
+        System.out.print("\\n");
+    }
+}
+
+//i/p -> 20 10
+//o/p -> 20 10
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner kk = new Scanner(System.in);
+        int a = kk.nextInt();
+        System.out.println(a);
+    }
+}
+
+
+//write a java program to get a float input from user and print it with two decimal points
+import java.util.*;
+class Main {
+    public static void main(String args[]){
+        Scanner kk = new Scanner(System.in);
+        float f = kk.nextFloat();
+        System.out.printf("%.2f",f);
+    }
+}
+
+//write a java program to get a double input from user and print it
+import java.util.*;
+class Main {
+    public static void main(String args[]){
+        Scanner kk = new Scanner(System.in);
+        double d = kk.nextFloat();
+        System.out.print(d);
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        int a=4;
+        int b=2;
+        int res=a<<b;
+        //left shift operator -->X*2^k
+        System.out.println(res);
+        //output-->16
+        int d=4;
+        int y=3;
+        int c=d>>y;
+        //righ shift operator -->x/2^k
+        System.out.println(c);
+        //output-->0
+    }
+}
+class Main{
+    public static void main(String[] args){
+      int a=5;
+      int b=3;
+      int res=a&b;
+      System.out.println("the and opeation between a=5 and b=3 is :-->"+res);
+      int d=5;
+      int e=4;
+      int resu=d^e;
+      System.out.println("the xor opration between d =5and e=4 is -->"+resu);
+      int result=d|e;
+      System.out.println("the or operation between 5 and 4 is :-->"+result);
+      int ans=a^d;
+      System.out.println("the xor operation of same numbers is :"+ans);
+      //the xor operation same numbers is always 0 ---->2^2=0
+      int z=0;
+      System.out.println("the xor operation with 0 is :"+(a^z));
+      //the xor operation of any number with 0 is that same number-->2^0=2 
+    }
+}
+
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=a++,c=b--,d=--c,e=d++,f=e--;
+        System.out.println("a value"+a);
+        System.out.println("b value"+b);
+        System.out.println("c value"+c);
+        System.out.println("e value"+e);
+        System.out.println("f value"+f);
+        System.out.println(f++);
+        System.out.println("f value"+(f++));
+    }
+}//post incremnt and pre increment
+//99
+a value100
+b value98
+c value98
+e value97
+f value98
+98
+f value99
