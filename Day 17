@@ -1,0 +1,802 @@
+1.public class Main {
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            newNode.next = head;
+        } else {
+            Node temp = head;
+
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+
+            temp.next = newNode;
+            newNode.next = head;
+        }
+    }
+
+    static int sum() {
+        if (head == null) {
+            return 0;
+        }
+
+        int total = 0;
+        Node temp = head;
+
+        do {
+            total = total + temp.data;
+            temp = temp.next;
+        } while (temp != head);
+
+        return total;
+    }
+
+    public static void main(String[] args) {
+
+        insert(10);
+        insert(20);
+        insert(30);
+        insert(40);
+
+        System.out.println("Sum = " + sum());
+    }
+}
+
+
+
+
+
+2.public class Main {
+
+    static class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            newNode.next = head;
+            newNode.prev = head;
+        } else {
+            Node last = head.prev;
+
+            newNode.next = head;
+            newNode.prev = last;
+
+            last.next = newNode;
+            head.prev = newNode;
+        }
+    }
+
+    static int sum() {
+        if (head == null) {
+            return 0;
+        }
+
+        int total = 0;
+        Node temp = head;
+
+        do {
+            total = total + temp.data;
+            temp = temp.next;
+        } while (temp != head);
+
+        return total;
+    }
+
+    public static void main(String[] args) {
+
+        insert(10);
+        insert(20);
+        insert(30);
+        insert(40);
+
+        System.out.println("Sum = " + sum());
+    }
+}
+
+
+
+
+
+3.public class Main {
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            newNode.next = head;
+        } else {
+            Node temp = head;
+
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+
+            temp.next = newNode;
+            newNode.next = head;
+        }
+    }
+
+    static void sort() {
+        if (head == null || head.next == head) {
+            return;
+        }
+
+        Node current = head;
+
+        do {
+            Node nextNode = current.next;
+
+            while (nextNode != head) {
+                if (current.data > nextNode.data) {
+                    int temp = current.data;
+                    current.data = nextNode.data;
+                    nextNode.data = temp;
+                }
+
+                nextNode = nextNode.next;
+            }
+
+            current = current.next;
+
+        } while (current != head);
+    }
+
+    static void display() {
+        if (head == null) {
+            return;
+        }
+
+        Node temp = head;
+
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
+
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+        insert(40);
+        insert(10);
+        insert(30);
+        insert(20);
+
+        System.out.println("Before sorting:");
+        display();
+
+        sort();
+
+        System.out.println("After sorting:");
+        display();
+    }
+}
+
+
+
+
+
+4.public class Main {
+
+    static class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            newNode.next = head;
+            newNode.prev = head;
+        } else {
+            Node last = head.prev;
+
+            newNode.next = head;
+            newNode.prev = last;
+
+            last.next = newNode;
+            head.prev = newNode;
+        }
+    }
+
+    static void sort() {
+        if (head == null || head.next == head) {
+            return;
+        }
+
+        Node current = head;
+
+        do {
+            Node nextNode = current.next;
+
+            while (nextNode != head) {
+
+                if (current.data > nextNode.data) {
+                    int temp = current.data;
+                    current.data = nextNode.data;
+                    nextNode.data = temp;
+                }
+
+                nextNode = nextNode.next;
+            }
+
+            current = current.next;
+
+        } while (current != head);
+    }
+
+    static void display() {
+        if (head == null) {
+            return;
+        }
+
+        Node temp = head;
+
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
+
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+        insert(40);
+        insert(10);
+        insert(30);
+        insert(20);
+
+        System.out.println("Before sorting:");
+        display();
+
+        sort();
+
+        System.out.println("After sorting:");
+        display();
+    }
+}
+
+
+
+
+
+5.public class Main {
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            newNode.next = head;
+        } else {
+            Node temp = head;
+
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+
+            temp.next = newNode;
+            newNode.next = head;
+        }
+    }
+
+    static int maximum() {
+        if (head == null) {
+            return -1;
+        }
+
+        int max = head.data;
+        Node temp = head.next;
+
+        while (temp != head) {
+            if (temp.data > max) {
+                max = temp.data;
+            }
+
+            temp = temp.next;
+        }
+
+        return max;
+    }
+
+    public static void main(String[] args) {
+
+        insert(40);
+        insert(10);
+        insert(70);
+        insert(20);
+        insert(50);
+
+        System.out.println("Maximum element = " + maximum());
+    }
+}
+
+
+
+
+
+6.public class Main {
+
+    static class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+
+    static Node head = null;
+
+    static void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            newNode.next = head;
+            newNode.prev = head;
+        } else {
+            Node last = head.prev;
+
+            newNode.next = head;
+            newNode.prev = last;
+
+            last.next = newNode;
+            head.prev = newNode;
+        }
+    }
+
+    static int maximum() {
+        if (head == null) {
+            return -1;
+        }
+
+        int max = head.data;
+        Node temp = head.next;
+
+        while (temp != head) {
+            if (temp.data > max) {
+                max = temp.data;
+            }
+
+            temp = temp.next;
+        }
+
+        return max;
+    }
+
+    public static void main(String[] args) {
+
+        insert(40);
+        insert(10);
+        insert(70);
+        insert(20);
+        insert(50);
+
+        System.out.println("Maximum element = " + maximum());
+    }
+}
+
+6.import java.util.*;
+class Node{
+    int data;
+    Node next,prev;
+    Node(int d){
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int d = sc.nextInt();
+	    Main m = new Main();
+	    while(d!=1){
+	        m.insert(d);
+	        d = sc.nextInt();
+	    }
+	    m.display();
+	}
+	Node   first = null;
+	void insert(int d){
+	    Node n = new Node(d);
+	    if(first == null) {
+	        first = n;
+	        n.next = first;
+	        n.prev = first;
+	    } else {
+	        Node temp = first;
+	        while(temp.next != first){
+	            temp = temp.next;
+	            temp.next = n;
+	            n.next = first;
+	            n.prev = temp;
+	            first.prev = n;
+	        }
+	    }
+	}
+	void display(){
+	   if(first == null)
+	   System.out.println("List is empty");
+	   Node temp = first;
+	   do {
+	       System.out.print(temp.data+" ");
+	       temp = temp.next;
+	       }
+	       while(temp != first);
+   }
+}
+
+
+7.//sum of the elements
+import java.util.*;
+
+class Node {
+    int data;
+    Node next, prev;
+
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+public class Main {
+
+    Node first = null;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int d = sc.nextInt();
+
+        Main m = new Main();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.display();
+
+        System.out.println("\nSum = " + m.sum());
+    }
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+            n.next = first;
+            n.prev = first;
+        } 
+        else {
+            Node temp = first;
+
+            while (temp.next != first) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.next = first;
+            n.prev = temp;
+            first.prev = n;
+        }
+    }
+
+    void display() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node temp = first;
+
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+
+    int sum() {
+        if (first == null)
+            return 0;
+
+        int sum = 0;
+        Node temp = first;
+
+        do {
+            sum += temp.data;
+            temp = temp.next;
+        } while (temp != first);
+
+        return sum;
+    }
+}
+
+8.//sort elements
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+    Node prev;
+
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+public class Main {
+
+    Node first = null;
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int d = sc.nextInt();
+
+        Main m = new Main();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        System.out.println("Before sorting:");
+        m.display();
+
+        m.sort();
+
+        System.out.println("\nAfter sorting:");
+        m.display();
+    }
+
+    void insert(int d) {
+
+        Node n = new Node(d);
+
+        if (first == null) {
+
+            first = n;
+
+            n.next = first;
+            n.prev = first;
+
+        } 
+        else {
+
+            Node temp = first;
+
+            while (temp.next != first) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.prev = temp;
+
+            n.next = first;
+            first.prev = n;
+        }
+    }
+
+    void display() {
+
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node temp = first;
+
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+
+    void sort() {
+
+        if (first == null)
+            return;
+
+        Node i = first;
+
+        do {
+
+            Node j = i.next;
+
+            while (j != first) {
+
+                if (i.data > j.data) {
+
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+
+                j = j.next;
+            }
+
+            i = i.next;
+
+        } while (i.next != first);
+    }
+}
+
+9.//Maximum elements
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+    Node prev;
+
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+public class Main {
+
+    Node first = null;
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int d = sc.nextInt();
+
+        Main m = new Main();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.display();
+
+        System.out.println("\nMaximum = " + m.maximum());
+    }
+
+    void insert(int d) {
+
+        Node n = new Node(d);
+
+        if (first == null) {
+
+            first = n;
+
+            n.next = first;
+            n.prev = first;
+
+        } 
+        else {
+
+            Node temp = first;
+
+            while (temp.next != first) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.prev = temp;
+
+            n.next = first;
+            first.prev = n;
+        }
+    }
+
+    void display() {
+
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node temp = first;
+
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+
+    int maximum() {
+
+        if (first == null)
+            return 0;
+
+        int max = first.data;
+        Node temp = first.next;
+
+        while (temp != first) {
+
+            if (temp.data > max) {
+                max = temp.data;
+            }
+
+            temp = temp.next;
+        }
+
+        return max;
+    }
+} 
